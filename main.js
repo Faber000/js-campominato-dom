@@ -3,7 +3,14 @@ let bool = false;
 let cont = 0;
 
 for(let i=0; i < 16; i++) {
-    let number = Math.floor(Math.random() * 100) + 1;
+
+    let number;
+
+    do {
+         number = Math.floor(Math.random() * 100) + 1;
+    }
+    while(bombs.includes(number)) 
+
     bombs[i] = number;
 }
 
