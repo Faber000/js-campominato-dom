@@ -1,3 +1,13 @@
+body {
+    background-image: url("img/image-2.png");
+}
+
+.body-image-win {
+    background-image: url("img/winner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .square {
     height: 100px;
     width: 100px;
@@ -5,19 +15,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(19, 137, 178);
+    border-radius: 8px;
+    background-color: rgb(100, 220, 214);
 }
 
 .container {
-    background-color: rgb(8, 59, 76);
+    background-color: rgb(26, 146, 170);
     padding-top: 60px;
     padding-bottom: 60px;
+    opacity: 0.9;
 }
 
 .safeNumber {
     background-color: rgb(11, 214, 161);
 }
 
-.finalContainer {
+.bombNumber {
+    background-color: red;
+}
+
+.divGameOver {
+    width: 800px;
+    height: 200px;
     background-color: lightblue;
+    border-radius: 20px;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

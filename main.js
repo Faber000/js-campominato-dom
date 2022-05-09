@@ -24,7 +24,7 @@ for (let i=1; i <= 100; i++) {
 
     element.addEventListener('click',
 
-        function() {
+         function choise() {
             userNumber = Number(element.innerText);
 
             if (bombs.includes(userNumber)) {
@@ -32,20 +32,50 @@ for (let i=1; i <= 100; i++) {
             } 
             else {
                 element.classList.add("safeNumber");
+                element.removeEventListener('click', choise);
                 element.addEventListener('click',
                     function() {
-                        alert("hai già scelto questo numero");
+                        alert("Hai già scelto questo numero!");
                     }
                 )
                 cont = cont + 1;
+                if (cont==84) {
+                    winGame();
+                }
             }
         }
     )
 }
 
 function endGame() {
+    let nodeList = document.querySelectorAll(".square");
+    for(let i=0; i<100; i++) {
+        if(bombs.includes(Number(nodeList[i].innerText))) {
+            nodeList[i].classList.add("bombNumber");
+        }
+    }
+    const body = document.querySelector("body");
     let element = document.createElement("h1");
+    let divGameOver = document.createElement("div");
     element.innerText = "Hai perso, il tuo punteggio è "+cont;
+    divGameOver.classList.add("divGameOver");
+    divGameOver.append(element);
+    body.append(divGameOver);
+
+    for(let i=0; i<100; i++) {
+        let element = document.getElementsByClassName("square")[i];
+        element.addEventListener('click', (e) => {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+          }, true);
+    }   
+}
+
+function winGame() {
+    const body = document.querySelector("body");
+    body.classList.add("body-image-win");
+    let element = document.createElement("h1");
+    element.innerText = "Congratulazioni! Hai vinto!";
     container.innerHTML="";
     container.classList.add("finalContainer");
     container.append(element);
