@@ -1,5 +1,4 @@
 bombs = [];
-let bool = false;
 let cont = 0;
 let userNumber;
 
@@ -12,21 +11,17 @@ for(let i=0; i < 16; i++) {
 
     bombs[i] = number;
 }
-
 const container = document.querySelector(".container");
 
 for (let i=1; i <= 100; i++) {
-
     let element = document.createElement("div");
     element.classList.add("square");
     element.innerText = i;
     container.append(element);
-
     element.addEventListener('click',
 
-         function choise() {
+        function choise() {
             userNumber = Number(element.innerText);
-
             if (bombs.includes(userNumber)) {
                 endGame();  
             } 
@@ -67,7 +62,7 @@ function endGame() {
         element.addEventListener('click', (e) => {
             e.stopImmediatePropagation();
             e.stopPropagation();
-          }, true);
+        }, true);
     }   
 }
 
