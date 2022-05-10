@@ -72,6 +72,6 @@ function winGame() {
     let element = document.createElement("h1");
     element.innerText = "Congratulazioni! Hai vinto!";
     container.innerHTML="";
-    container.classList.add("finalContainer");
+    container.classList.add("winnerContainer");
     container.append(element);
 }
