@@ -65,10 +65,22 @@ body {
     align-items: center;
 }
 
-.playAgainButton {
-    border: 2px solid rgb(26, 146, 170);;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(11, 214, 161);
+.divStart {
+    width: 800px;
+    height: 200px;
+    background-color: lightblue;
+    border-radius: 20px;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonLevel {
+    width: 100px;
+    height: 100px;
 }

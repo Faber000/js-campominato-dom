@@ -34,7 +34,7 @@ for (let i=1; i <= 100; i++) {
                     }
                 )
                 cont = cont + 1;
-                if (cont==84) {
+                if (cont==5) {
                     winGame();
                 }
             }
